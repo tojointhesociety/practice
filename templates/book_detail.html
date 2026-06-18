@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p><strong>Автор:</strong> {{ book.author }}</p>
+<p><strong>Жанр:</strong> {{ book.genre.name|default:"Не указан" }}</p>
+<p><strong>Год:</strong> {{ book.year|default:"Не указан" }}</p>
+<p><strong>Издательство:</strong> {{ book.publisher|default:"Не указано" }}</p>
+<p><strong>Описание:</strong> {{ book.description|default:"—" }}</p>
+
+<h2 class="mt-4">Экземпляры в библиотеке</h2>
+{% if copies %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Инвентарный номер</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for copy in copies %}
+                <tr>
+                    <td>{{ copy.inventory_number }}</td>
+                    <td>{{ copy.get_status_display }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>Экземпляров не найдено.</p>
+{% endif %}
+
+<a href="{% url 'book_list' %}" class="btn btn-secondary">← Назад к каталогу</a>
+{% endblock %}
