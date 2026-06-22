@@ -79,6 +79,14 @@ class BookCopy(models.Model):
         related_name="copies",
         verbose_name="Накладная",
     )
+    borrowed_by = models.ForeignKey(
+        "auth.User",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        verbose_name="Читатель",
+    )
+    issued_date = models.DateField(null=True, blank=True, verbose_name="Дата выдачи")
 
     def save(self, *args, **kwargs):
         if not self.inventory_number:

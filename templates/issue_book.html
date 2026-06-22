@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Выдача книги «{{ copy.book.title }}»</h1>
+<p><strong>Инвентарный номер:</strong> {{ copy.inventory_number }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="user_id" class="form-label">Выберите читателя</label>
+        <select name="user_id" id="user_id" class="form-select" required>
+            <option value="">-- Выберите пользователя --</option>
+            {% for guest in guests %}
+                <option value="{{ guest.id }}">{{ guest.username }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Выдать</button>
+    <a href="{% url 'book_detail' copy.book.pk %}" class="btn btn-secondary">Отмена</a>
+</form>
+{% endblock %}

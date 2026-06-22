@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from .models import Book, BookCopy, Invoice
@@ -39,13 +40,33 @@ class BookDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
         copies = self.object.copies.all()
-
-        if not self.request.user.groups.filter(name="Librarians").exists():
+        is_librarian = self.request.user.groups.filter(name="Librarians").exists()
+        if not is_librarian:
             copies = copies.filter(status="available")
         context["copies"] = copies
+        context["is_librarian"] = is_librarian  # <-- добавляем переменную
         return context
+
+
+@librarian_required
+def issue_book(request, pk):
+    copy = get_object_or_404(BookCopy, pk=pk)
+    if request.method == "POST":
+        user_id = request.POST.get("user_id")
+        if user_id:
+            user = get_object_or_404(User, pk=user_id)
+            copy.borrowed_by = user
+            copy.status = "issued"
+            copy.issued_date = date.today()
+            copy.save()
+            messages.success(
+                request,
+                f"Книга {copy.inventory_number} выдана пользователю {user.username}",
+            )
+            return redirect("book_detail", pk=copy.book.pk)
+    guests = User.objects.filter(groups__name="Guests")
+    return render(request, "issue_book.html", {"copy": copy, "guests": guests})
 
 
 @librarian_required
@@ -117,3 +138,12 @@ class InvoiceDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context["copies"] = self.object.copies.all()
         return context
+
+
+@login_required
+@guest_required
+def my_books(request):
+    copies = BookCopy.objects.filter(
+        borrowed_by=request.user, status="issued"
+    ).order_by("-issued_date")
+    return render(request, "my_books.html", {"copies": copies})

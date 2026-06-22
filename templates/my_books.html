@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Мои выданные книги</h1>
+{% if copies %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Инвентарный номер</th>
+                <th>Название книги</th>
+                <th>Дата выдачи</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for copy in copies %}
+                <tr>
+                    <td>{{ copy.inventory_number }}</td>
+                    <td>{{ copy.book.title }}</td>
+                    <td>{{ copy.issued_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>У вас нет выданных книг.</p>
+{% endif %}
+{% endblock %}

@@ -14,6 +14,9 @@
             <tr>
                 <th>Инвентарный номер</th>
                 <th>Статус</th>
+                {% if is_librarian %}
+                    <th>Действие</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -21,6 +24,13 @@
                 <tr>
                     <td>{{ copy.inventory_number }}</td>
                     <td>{{ copy.get_status_display }}</td>
+                    {% if is_librarian %}
+                        <td>
+                            {% if copy.status == 'available' %}
+                                <a href="{% url 'issue_book' copy.pk %}" class="btn btn-sm btn-success">Выдать</a>
+                            {% endif %}
+                        </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
         </tbody>

@@ -17,9 +17,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'book_list' %}">Каталог</a></li>
-                    {% if user.is_authenticated and user.groups.all.0.name == 'Librarians' %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'book_create' %}">Добавить книгу</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'invoice_list' %}">Накладные</a></li>
+                    {% if user.is_authenticated %}
+                        {% if user.groups.all.0.name == 'Librarians' %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'book_create' %}">Добавить книгу</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'invoice_list' %}">Накладные</a></li>
+                        {% elif user.groups.all.0.name == 'Guests' %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'my_books' %}">Мои книги</a></li>
+                        {% endif %}
                     {% endif %}
                 </ul>
                 <ul class="navbar-nav">

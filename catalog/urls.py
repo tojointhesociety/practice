@@ -9,4 +9,6 @@ urlpatterns = [
     path("guest/", views.guest_page, name="guest_page"),
     path("invoices", views.InvoiceListView.as_view(), name="invoice_list"),
     path("invoice/<int:pk>/", views.InvoiceDetailView.as_view(), name="invoice_detail"),
+    path("my-books/", views.my_books, name="my_books"),
+    path("issue/<int:pk>/", views.issue_book, name="issue_book"),
 ]
