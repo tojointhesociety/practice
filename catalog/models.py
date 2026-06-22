@@ -2,7 +2,6 @@ from django.db import models
 from datetime import date
 
 
-# Жанр книги (детектив, роман, фантастика...)
 class Genre(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name="Название жанра")
 
@@ -14,7 +13,6 @@ class Genre(models.Model):
         verbose_name_plural = "Жанры"
 
 
-# Шаблон книги (общая информация, не экземпляр)
 class Book(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")
     author = models.CharField(max_length=255, verbose_name="Автор")
@@ -38,7 +36,6 @@ class Book(models.Model):
         verbose_name_plural = "Книги"
 
 
-# Накладная на поступление книг
 class Invoice(models.Model):
     supplier = models.CharField(max_length=255, verbose_name="Поставщик")
     date = models.DateField(default=date.today, verbose_name="Дата")
@@ -54,7 +51,6 @@ class Invoice(models.Model):
         verbose_name_plural = "Накладные"
 
 
-# Физический экземпляр книги с инвентарным номером
 class BookCopy(models.Model):
     STATUS_CHOICES = [
         ("available", "Доступна"),
@@ -84,11 +80,10 @@ class BookCopy(models.Model):
         verbose_name="Накладная",
     )
 
-    # Автоматическая генерация инвентарного номера
     def save(self, *args, **kwargs):
         if not self.inventory_number:
-            year = str(date.today().year)  # текущий год, например "2026"
-            # Ищем последний номер этого года
+            year = str(date.today().year)
+
             last_copy = (
                 BookCopy.objects.filter(inventory_number__startswith=f"{year}-")
                 .order_by("-inventory_number")

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Накладная №{{ invoice.number }}</h1>
+<p><strong>Дата:</strong> {{ invoice.date }}</p>
+<p><strong>Поставщик:</strong> {{ invoice.supplier }}</p>
+
+<h2>Список экземпляров</h2>
+<table class="table table-striped">
+    <thead>
+        <tr><th>Инв. номер</th><th>Название книги</th><th>Статус</th></tr>
+    </thead>
+    <tbody>
+        {% for copy in copies %}
+            <tr>
+                <td>{{ copy.inventory_number }}</td>
+                <td>{{ copy.book.title }}</td>
+                <td>{{ copy.get_status_display }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'invoice_list' %}" class="btn btn-secondary">← К списку накладных</a>
+{% endblock %}
