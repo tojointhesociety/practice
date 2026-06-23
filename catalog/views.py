@@ -14,6 +14,9 @@ from django.utils.decorators import method_decorator
 from .decorators import librarian_required
 from .filters import BookFilter
 from django_filters.views import FilterView
+from xhtml2pdf import pisa
+from django.template.loader import get_template
+from django.http import HttpResponse
 
 
 def home(request):
@@ -67,6 +70,22 @@ def issue_book(request, pk):
             return redirect("book_detail", pk=copy.book.pk)
     guests = User.objects.filter(groups__name="Guests")
     return render(request, "issue_book.html", {"copy": copy, "guests": guests})
+
+
+@librarian_required
+def invoice_pdf(request, pk):
+    invoice = get_object_or_404(Invoice, pk=pk)
+    copies = invoice.copies.all()
+    template = get_template("invoice_pdf.html")
+    html = template.render({"invoice": invoice, "copies": copies})
+    response = HttpResponse(content_type="application/pdf")
+    response["Content-Disposition"] = (
+        f'attachment; filename="invoice_{invoice.number}.pdf"'
+    )
+    pisa_status = pisa.CreatePDF(html, dest=response)
+    if pisa_status.err:
+        return HttpResponse("Ошибка генерации PDF", status=500)
+    return response
 
 
 @librarian_required
