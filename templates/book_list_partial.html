@@ -9,7 +9,14 @@
                         {{ book.genre.name|default:"Без жанра" }} | 
                         {{ book.year|default:"Год не указан" }}
                     </small></p>
-                    <a href="{% url 'book_detail' book.pk %}" class="btn btn-primary">Подробнее</a>
+                    <button class="btn btn-primary" 
+                            hx-get="{% url 'book_detail_modal' book.pk %}" 
+                            hx-target="#modal-container" 
+                            hx-trigger="click"
+                            data-bs-toggle="modal"
+                            data-bs-target="#bookModal">
+                        Подробнее
+                    </button>
                 </div>
             </div>
         </div>

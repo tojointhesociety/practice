@@ -166,3 +166,11 @@ def my_books(request):
         borrowed_by=request.user, status="issued"
     ).order_by("-issued_date")
     return render(request, "my_books.html", {"copies": copies})
+
+
+def book_detail_modal(request, pk):
+    book = get_object_or_404(Book, pk=pk)
+    copies = book.copies.all()
+    if not request.user.groups.filter(name="Librarians").exists():
+        copies = copies.filter(status="available")
+    return render(request, "book_detail_modal.html", {"book": book, "copies": copies})
