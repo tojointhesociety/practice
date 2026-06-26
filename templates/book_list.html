@@ -3,11 +3,7 @@
 <h1>Каталог книг</h1>
 
 
-<form method="get" 
-      hx-get="{% url 'book_list' %}" 
-      hx-target="#book-list" 
-      hx-trigger="submit, input delay:500ms from:.filter-input" 
-      hx-swap="outerHTML">
+<form method="get" hx-get="{% url 'book_list' %}" hx-target="#book-list" hx-trigger="submit, input delay:500ms from:.filter-input" hx-swap="outerHTML">
     <div class="row mb-4">
         <div class="col">
             {{ filter.form.title.label_tag }}

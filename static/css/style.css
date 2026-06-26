@@ -1,0 +1,170 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f3eb;  
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c9b5' fill-opacity='0.3'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: #3e3a35;
+}
+
+.navbar {
+    background-color: #4a3f35 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+}
+.navbar .nav-link {
+    color: #ede0c8 !important;
+    transition: color 0.2s;
+}
+.navbar .nav-link:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}
+.navbar-text {
+    color: #ccc;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #fffaf4;
+    border-left: 4px solid #b08968;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.card-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #5d4037;
+}
+.card-text {
+    color: #5d4037;
+}
+
+.btn {
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.btn-primary {
+    background-color: #6d4c41;
+    border-color: #6d4c41;
+}
+.btn-primary:hover {
+    background-color: #5d4037;
+    border-color: #5d4037;
+}
+.btn-success {
+    background-color: #7b8d6e;
+    border-color: #7b8d6e;
+}
+.btn-success:hover {
+    background-color: #5f6e54;
+    border-color: #5f6e54;
+}
+.btn-danger {
+    background-color: #a05252;
+    border-color: #a05252;
+}
+.btn-danger:hover {
+    background-color: #843e3e;
+    border-color: #843e3e;
+}
+.btn-secondary {
+    background-color: #b0a090;
+    border-color: #b0a090;
+    color: #fff;
+}
+.btn-secondary:hover {
+    background-color: #8c7b6b;
+    border-color: #8c7b6b;
+    color: #fff;
+}
+.btn-outline-secondary {
+    color: #6d4c41;
+    border-color: #6d4c41;
+}
+.btn-outline-secondary:hover {
+    background-color: #6d4c41;
+    color: #fff;
+}
+
+.table {
+    background-color: #fffaf4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.table thead th {
+    background-color: #ede0c8;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #4a3f35;
+    border-bottom: 2px solid #b08968;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcf7f0;
+}
+
+.modal-content {
+    background-color: #fdfaf5;
+    border-radius: 16px;
+    border: 1px solid #d4c9b5;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.modal-header {
+    border-bottom: 1px solid #d4c9b5;
+    background-color: #ede0c8;
+    border-radius: 16px 16px 0 0;
+}
+.modal-title {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: #4a3f35;
+}
+.modal-footer {
+    border-top: 1px solid #d4c9b5;
+}
+
+.pagination .page-link {
+    color: #6d4c41;
+    background-color: #fffaf4;
+    border: 1px solid #d4c9b5;
+}
+.pagination .page-item.active .page-link {
+    background-color: #6d4c41;
+    border-color: #6d4c41;
+    color: #fff;
+}
+.pagination .page-link:hover {
+    background-color: #ede0c8;
+    color: #4a3f35;
+}
+
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #d4c9b5;
+    background-color: #fffdf9;
+}
+.form-control:focus, .form-select:focus {
+    border-color: #b08968;
+    box-shadow: 0 0 0 0.2rem rgba(176,137,104,0.25);
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Merriweather', serif;
+    color: #4a3f35;
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ede0c8 !important;
+}

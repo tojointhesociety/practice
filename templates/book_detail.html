@@ -27,7 +27,7 @@
                     {% if is_librarian %}
                         <td>
                             {% if copy.status == 'available' %}
-                                <a href="{% url 'issue_book' copy.pk %}" class="btn btn-sm btn-success">Выдать</a>
+                                <a href="{% url 'issue_book' copy.pk %}" class="btn btn-sm btn-success"><i class="bi bi-box-arrow-right"></i> Выдать</a>
                             {% endif %}
                         </td>
                     {% endif %}
