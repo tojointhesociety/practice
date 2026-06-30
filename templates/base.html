@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'book_list' %}"><i class="bi bi-book"></i> Каталог</a>
+                        <a class="nav-link" href="{% url 'book_list' %}"> Каталог</a>
                     </li>
                     {% if user.is_authenticated %}
                         {% if user.groups.all.0.name == 'Librarians' %}

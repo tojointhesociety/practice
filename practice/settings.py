@@ -1,4 +1,8 @@
 import os
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 """
 Django settings for practice project.
@@ -76,14 +80,9 @@ WSGI_APPLICATION = "practice.wsgi.application"
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "practice_db",
-        "USER": "postgres",
-        "PASSWORD": "Slava_2026",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    "default": env.db(
+        default="postgresql://practice_user:practice_pass@db:5432/practice_db"
+    )
 }
 
 

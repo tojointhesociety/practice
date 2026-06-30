@@ -1,0 +1,631 @@
+[
+{
+  "model": "catalog.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Фантастика"
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Детектив"
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Роман"
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Научная фантастика"
+  }
+},
+{
+  "model": "catalog.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Ужасы"
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 1,
+  "fields": {
+    "title": "Дюна",
+    "author": "Фрэнк Герберт",
+    "isbn": null,
+    "genre": 1,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 2,
+  "fields": {
+    "title": "1984",
+    "author": "Джордж Оруэлл",
+    "isbn": null,
+    "genre": 1,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 3,
+  "fields": {
+    "title": "О дивный новый мир",
+    "author": "Олдос Хаксли",
+    "isbn": null,
+    "genre": 1,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 4,
+  "fields": {
+    "title": "Шерлок Холмс",
+    "author": "Артур Конан Дойл",
+    "isbn": null,
+    "genre": 2,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 5,
+  "fields": {
+    "title": "Десять негритят",
+    "author": "Агата Кристи",
+    "isbn": null,
+    "genre": 2,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 6,
+  "fields": {
+    "title": "Девушка с татуировкой дракона",
+    "author": "Стиг Ларссон",
+    "isbn": null,
+    "genre": 2,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 7,
+  "fields": {
+    "title": "Анна Каренина",
+    "author": "Лев Толстой",
+    "isbn": null,
+    "genre": 3,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 8,
+  "fields": {
+    "title": "Гордость и предубеждение",
+    "author": "Джейн Остин",
+    "isbn": null,
+    "genre": 3,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 9,
+  "fields": {
+    "title": "Мастер и Маргарита",
+    "author": "Михаил Булгаков",
+    "isbn": null,
+    "genre": 3,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 10,
+  "fields": {
+    "title": "Марсианин",
+    "author": "Энди Вейер",
+    "isbn": null,
+    "genre": 4,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 11,
+  "fields": {
+    "title": "Автостопом по галактике",
+    "author": "Дуглас Адамс",
+    "isbn": null,
+    "genre": 4,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 12,
+  "fields": {
+    "title": "Нейромант",
+    "author": "Уильям Гибсон",
+    "isbn": null,
+    "genre": 4,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 13,
+  "fields": {
+    "title": "Оно",
+    "author": "Стивен Кинг",
+    "isbn": null,
+    "genre": 5,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 14,
+  "fields": {
+    "title": "Сияние",
+    "author": "Стивен Кинг",
+    "isbn": null,
+    "genre": 5,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.book",
+  "pk": 15,
+  "fields": {
+    "title": "Франкенштейн",
+    "author": "Мэри Шелли",
+    "isbn": null,
+    "genre": 5,
+    "description": "",
+    "publisher": "",
+    "year": null
+  }
+},
+{
+  "model": "catalog.invoice",
+  "pk": 1,
+  "fields": {
+    "supplier": "Центральный книжный склад",
+    "date": "2026-06-30",
+    "number": "НК-2026-тест"
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 1,
+  "fields": {
+    "book": 1,
+    "inventory_number": "2026-0001",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 2,
+  "fields": {
+    "book": 1,
+    "inventory_number": "2026-0002",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 3,
+  "fields": {
+    "book": 2,
+    "inventory_number": "2026-0003",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 4,
+  "fields": {
+    "book": 2,
+    "inventory_number": "2026-0004",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 5,
+  "fields": {
+    "book": 3,
+    "inventory_number": "2026-0005",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 6,
+  "fields": {
+    "book": 3,
+    "inventory_number": "2026-0006",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 7,
+  "fields": {
+    "book": 4,
+    "inventory_number": "2026-0007",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 8,
+  "fields": {
+    "book": 4,
+    "inventory_number": "2026-0008",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 9,
+  "fields": {
+    "book": 5,
+    "inventory_number": "2026-0009",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 10,
+  "fields": {
+    "book": 5,
+    "inventory_number": "2026-0010",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 11,
+  "fields": {
+    "book": 6,
+    "inventory_number": "2026-0011",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 12,
+  "fields": {
+    "book": 6,
+    "inventory_number": "2026-0012",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 13,
+  "fields": {
+    "book": 7,
+    "inventory_number": "2026-0013",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 14,
+  "fields": {
+    "book": 7,
+    "inventory_number": "2026-0014",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 15,
+  "fields": {
+    "book": 8,
+    "inventory_number": "2026-0015",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 16,
+  "fields": {
+    "book": 8,
+    "inventory_number": "2026-0016",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 17,
+  "fields": {
+    "book": 9,
+    "inventory_number": "2026-0017",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 18,
+  "fields": {
+    "book": 9,
+    "inventory_number": "2026-0018",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 19,
+  "fields": {
+    "book": 10,
+    "inventory_number": "2026-0019",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 20,
+  "fields": {
+    "book": 10,
+    "inventory_number": "2026-0020",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 21,
+  "fields": {
+    "book": 11,
+    "inventory_number": "2026-0021",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 22,
+  "fields": {
+    "book": 11,
+    "inventory_number": "2026-0022",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 23,
+  "fields": {
+    "book": 12,
+    "inventory_number": "2026-0023",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 24,
+  "fields": {
+    "book": 12,
+    "inventory_number": "2026-0024",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 25,
+  "fields": {
+    "book": 13,
+    "inventory_number": "2026-0025",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 26,
+  "fields": {
+    "book": 13,
+    "inventory_number": "2026-0026",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 27,
+  "fields": {
+    "book": 14,
+    "inventory_number": "2026-0027",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 28,
+  "fields": {
+    "book": 14,
+    "inventory_number": "2026-0028",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 29,
+  "fields": {
+    "book": 15,
+    "inventory_number": "2026-0029",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+},
+{
+  "model": "catalog.bookcopy",
+  "pk": 30,
+  "fields": {
+    "book": 15,
+    "inventory_number": "2026-0030",
+    "status": "available",
+    "added_date": "2026-06-30",
+    "invoice": 1,
+    "borrowed_by": null,
+    "issued_date": null
+  }
+}
+]
