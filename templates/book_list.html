@@ -2,24 +2,24 @@
 {% block content %}
 <h1>Каталог книг</h1>
 
-
-<form method="get" hx-get="{% url 'book_list' %}" hx-target="#book-list" hx-trigger="submit, input delay:500ms from:.filter-input" hx-swap="outerHTML">
-    <div class="row mb-4">
-        <div class="col">
+<form method="get" hx-get="{% url 'book_list' %}" hx-target="#book-list"
+      hx-trigger="submit, input delay:500ms from:.filter-input" hx-swap="outerHTML">
+    <div class="row g-3 mb-4">
+        <div class="col-md-3">
             {{ filter.form.title.label_tag }}
             {{ filter.form.title }}
         </div>
-        <div class="col">
+        <div class="col-md-3">
             {{ filter.form.author.label_tag }}
             {{ filter.form.author }}
         </div>
-        <div class="col">
+        <div class="col-md-3">
             {{ filter.form.genre.label_tag }}
             {{ filter.form.genre }}
         </div>
-        <div class="col-auto align-self-end">
-            <button type="submit" class="btn btn-primary">Искать</button>
-            <a href="{% url 'book_list' %}" class="btn btn-secondary">Сброс</a>
+        <div class="col-md-3 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary me-2">Искать</button>
+            <a href="{% url 'book_list' %}" class="btn btn-outline-secondary">Сброс</a>
         </div>
     </div>
 </form>
